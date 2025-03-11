@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -I ".*" | tr '\n' ',' | sed 's/,$/\n/'
+ls -m
