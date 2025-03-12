@@ -1,0 +1,21 @@
+table {
+    width: 100%; 
+    border-collapse: collapse;
+    border: 3px solid black;
+    height: 100%;
+
+}
+    .C1{
+        background-color: greenyellow;
+        font-size: 75px;
+        
+    }
+    .C2{
+        background-color: orange;
+        font-size: 75px;
+        
+    }
+    html ,body{
+        height: 100%;
+        width: 100%;
+    }
