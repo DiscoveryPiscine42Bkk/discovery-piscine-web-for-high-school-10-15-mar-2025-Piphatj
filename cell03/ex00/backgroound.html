@@ -1,80 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Background Color</title>
-    <style>
-        /* Basic body style */
-        body {
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.5s ease; /* Smooth transition for background color */
-        }
-
-        /* Hide the actual input checkbox */
-        input[type="checkbox"] {
-            display: none;
-        }
-
-        /* Style for the label that looks like a button */
-        label {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 30px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        label:hover {
-            background-color: #45a049;
-        }
-
-        /* When the checkbox is checked, change the background color */
-        input#color1:checked ~ body {
-            background-color: #FF5733; /* Red */
-        }
-
-        input#color2:checked ~ body {
-            background-color: #33FF57; /* Green */
-        }
-
-        input#color3:checked ~ body {
-            background-color: #5733FF; /* Blue */
-        }
-
-        input#color4:checked ~ body {
-            background-color: #FFC300; /* Yellow */
-        }
-
-        input#color5:checked ~ body {
-            background-color: #33FFF7; /* Cyan */
-        }
-
-    </style>
+    <title>Change background</title>
+    <link rel="stylesheet" href="backgroound.css">
 </head>
 <body>
+    <button onclick="changeBackgroundColor()">Click Me!</button>
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF'; 
+            let color = '#'; 
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)]; 
+            }
+            return color; 
+        }
 
-    <!-- Hidden checkboxes for background color change -->
-    <input type="checkbox" id="color1">
-    <input type="checkbox" id="color2">
-    <input type="checkbox" id="color3">
-    <input type="checkbox" id="color4">
-    <input type="checkbox" id="color5">
-
-    <!-- Labels that act like buttons -->
-    <label for="color1">Red</label>
-    <label for="color2">Green</label>
-    <label for="color3">Blue</label>
-    <label for="color4">Yellow</label>
-    <label for="color5">Cyan</label>
-
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = getRandomColor(); 
+        }
+    </script>
 </body>
 </html>
