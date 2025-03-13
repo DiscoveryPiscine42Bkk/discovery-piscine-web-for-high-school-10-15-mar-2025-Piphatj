@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(45deg,#fbda61,#ff5acd);
+    min-height: 100vh;
+}
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border-radius:  20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+}
+.card:hover{
+    height: 400px;
+}
+.img1{
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    transform: translate(-50%);
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    transition: 0.5s;
+}
+.img1 img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+}
+.card:hover .img1{
+    width: 200px;
+    height: 200px;
+}
+.card .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.card .content .detail{
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card .content .detail h2 span{
+    font-size: 0.75em;
+    font-weight: 500;
+    opacity: 0.5;
+}
+.card .content .btn button{
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    background: #ff5acd;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* transition สำหรับ opacity และ visibility */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+    visibility: hidden; 
+}
+.card:hover .btn button{
+    opacity: 1;
+    visibility: visible; 
+    transition: opacity 0.3s ease, visibility 0s; /* transition ให้ปุ่มแสดง */
+}
+
+.card .socialme {
+    display: flex;
+    justify-content: space-between;
+    
+}
