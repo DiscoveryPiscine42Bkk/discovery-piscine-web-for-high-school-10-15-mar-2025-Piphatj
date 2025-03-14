@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    #balloon {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="balloon"></div>
+
+  <script>
+    const balloon = document.getElementById('balloon');
+    let size = 200;
+    let colorIndex = 0;
+    const colors = ['red', 'green', 'blue'];
+
+    // Function to update the color
+    function updateColor() {
+      balloon.style.backgroundColor = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+    }
+
+    // Function to handle balloon click
+    balloon.addEventListener('click', () => {
+      if (size >= 420) {
+        size = 200; // Balloon explodes and resets size
+      } else {
+        size += 10; // Increase size by 10px
+      }
+      balloon.style.width = size + 'px';
+      balloon.style.height = size + 'px';
+      updateColor(); // Change color
+    });
+
+    // Function to handle mouse leaving the balloon
+    balloon.addEventListener('mouseleave', () => {
+      if (size > 200) {
+        size -= 5; // Shrink size by 5px
+      }
+      balloon.style.width = size + 'px';
+      balloon.style.height = size + 'px';
+      colorIndex = (colorIndex - 1 + colors.length) % colors.length; // Reverse color order
+      balloon.style.backgroundColor = colors[colorIndex];
+    });
+  </script>
+</body>
+</html>

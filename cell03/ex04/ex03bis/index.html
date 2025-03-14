@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+   body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+.container {
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: #45a049;
+}
+#ft_list {
+  margin-top: 20px;
+  padding: 0;
+}
+.todo {
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.todo:hover {
+  background-color: #c0c0c0;
+}
+ 
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="style.css"> <!-- Optional, if you want to add a separate CSS file -->
+</head>
+<body>
+  <div class="container">
+    <center><h1>TO DO LISH</h1></center>
+    <button class="btn" id="newTaskBtn">New</button>
+    <div id="ft_list"></div>
+  </div>
+
+  <script src="todo.js"></script> <!-- Link to the external JS file -->
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    #balloon {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="balloon"></div>
+
+  <script>
+    $(document).ready(function() {
+      let size = 200; // Initial size of the balloon
+      let colors = ['red', 'green', 'blue']; // Colors order for clicks
+      let currentColorIndex = 0;
+
+      // Click event to grow the balloon and change color
+      $('#balloon').click(function() {
+        if (size < 420) {
+          size += 10; // Grow by 10px
+          $('#balloon').css({
+            width: size + 'px',
+            height: size + 'px',
+            backgroundColor: colors[currentColorIndex]
+          });
+
+          // Cycle through colors
+          currentColorIndex = (currentColorIndex + 1) % colors.length;
+        } else {
+          // Balloon explodes and resets size to 200px
+          size = 200;
+          $('#balloon').css({
+            width: size + 'px',
+            height: size + 'px',
+            backgroundColor: 'red'
+          });
+        }
+      });
+
+      // Mouseenter event to shrink the balloon and reverse color
+      $('#balloon').mouseenter(function() {
+        if (size > 200) {
+          size -= 5; // Shrink by 5px
+          currentColorIndex = (currentColorIndex - 1 + colors.length) % colors.length; // Reverse color order
+          $('#balloon').css({
+            width: size + 'px',
+            height: size + 'px',
+            backgroundColor: colors[currentColorIndex]
+          });
+        }
+      });
+
+      // Mouseleave event to shrink the balloon and reverse color
+      $('#balloon').mouseleave(function() {
+        if (size > 200) {
+          size -= 5; // Shrink by 5px
+          currentColorIndex = (currentColorIndex - 1 + colors.length) % colors.length; // Reverse color order
+          $('#balloon').css({
+            width: size + 'px',
+            height: size + 'px',
+            backgroundColor: colors[currentColorIndex]
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

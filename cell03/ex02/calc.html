@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .calculator {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    input, select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="number" id="leftInput" placeholder="Enter first number" min="0">
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <input type="number" id="rightInput" placeholder="Enter second number" min="0">
+    <input type="submit" value="Try me!" id="submitBtn">
+  </div>
+
+  <script>
+    const leftInput = document.getElementById('leftInput');
+    const rightInput = document.getElementById('rightInput');
+    const operatorSelect = document.getElementById('operator');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Function to perform calculation
+    function calculate() {
+      const left = parseInt(leftInput.value);
+      const right = parseInt(rightInput.value);
+      const operator = operatorSelect.value;
+
+      if (isNaN(left) || isNaN(right) || left < 0 || right < 0) {
+        alert('Error :(');
+        return;
+      }
+
+      let result;
+      switch (operator) {
+        case '+':
+          result = left + right;
+          break;
+        case '-':
+          result = left - right;
+          break;
+        case '*':
+          result = left * right;
+          break;
+        case '/':
+          if (right === 0) {
+            alert("It’s over 9000!");
+            return;
+          }
+          result = left / right;
+          break;
+        case '%':
+          if (right === 0) {
+            alert("It’s over 9000!");
+            return;
+          }
+          result = left % right;
+          break;
+      }
+
+      alert(`Result: ${result}`);
+      console.log(result);
+    }
+
+    // Event listener for the submit button
+    submitBtn.addEventListener('click', calculate);
+
+    // Set a periodic alert every 30 seconds
+    setInterval(() => {
+      alert("Please, use me...");
+    }, 30000);
+  </script>
+</body>
+</html>

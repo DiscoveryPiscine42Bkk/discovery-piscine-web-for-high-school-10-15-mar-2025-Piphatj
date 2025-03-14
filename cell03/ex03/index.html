@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management</title>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f7f7f7;
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  
+}
+
+#ft_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo {
+  background-color: #efefef;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.todo:hover {
+  background-color: #d9d9d9;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  
+}
+
+button:hover {
+  background-color: red;
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <center><h1>TO DO LISH</h1></center>
+    <button id="newTodoBtn">New</button>
+    <div id="ft_list"></div>
+  </div>
+  <script src="todo.js"></script>
+</body>
+</html>
+
+  

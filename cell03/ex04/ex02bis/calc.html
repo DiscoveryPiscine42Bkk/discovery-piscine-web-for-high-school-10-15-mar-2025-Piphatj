@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .calculator {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+    }
+    input, select {
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+      font-size: 16px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="number" id="leftOperand" placeholder="Enter left number" />
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <input type="number" id="rightOperand" placeholder="Enter right number" />
+    <input type="submit" id="calculateBtn" value="Try me!" />
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      // Function to perform calculation
+      $('#calculateBtn').click(function() {
+        var leftOperand = $('#leftOperand').val();
+        var rightOperand = $('#rightOperand').val();
+        var operator = $('#operator').val();
+
+        // Check if both operands are valid positive integers
+        if (leftOperand === '' || rightOperand === '' || isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
+          alert('Error :(');
+          return;
+        }
+
+        leftOperand = parseInt(leftOperand);
+        rightOperand = parseInt(rightOperand);
+
+        // Perform calculation based on the operator
+        var result;
+        switch (operator) {
+          case '+':
+            result = leftOperand + rightOperand;
+            break;
+          case '-':
+            result = leftOperand - rightOperand;
+            break;
+          case '*':
+            result = leftOperand * rightOperand;
+            break;
+          case '/':
+            if (rightOperand === 0) {
+              alert("It's over 9000!");
+              console.log("It's over 9000!");
+              return;
+            }
+            result = leftOperand / rightOperand;
+            break;
+          case '%':
+            if (rightOperand === 0) {
+              alert("It's over 9000!");
+              console.log("It's over 9000!");
+              return;
+            }
+            result = leftOperand % rightOperand;
+            break;
+          default:
+            alert('Unknown operator');
+            return;
+        }
+
+        // Show result in an alert and log it to the console
+        alert('Result: ' + result);
+        console.log('Result: ' + result);
+      });
+
+      // Set interval to show a pop-up every 30 seconds
+      setInterval(function() {
+        alert('Please, use me...');
+      }, 30000); // 30000 milliseconds = 30 seconds
+    });
+  </script>
+</body>
+</html>

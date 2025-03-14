@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color with jQuery</title>
+    <link rel="stylesheet" href="background.css">
+</head>
+<body>
+    <h1>Change the Background Color</h1>
+    <button id="changeColorButton">Click me to change background color</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            $('#changeColorButton').click(function() {
+                $('body').css('background-color', getRandomColor());
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tab</title>
+        <style>
+            table {
+            width: 80%; 
+            margin: 50px auto; 
+            margin-top: 75px;
+            border-collapse: collapse;
+            border: 3px solid black;
+            height: 200px;
+
+        }
+            .C1{
+                background-color: greenyellow;
+                font-size: 75px;
+                
+            }
+            .C2{
+                background-color: orange;
+                font-size: 75px;
+                
+            }
+            @media (max-weidth: 600px) {
+            table {
+                width: 100%;
+                height: auto;
+            }
+            td{
+                height: 150px;
+                font-size: 16px;
+                width: 100%;
+                display: block;
+                padding: 15px;
+
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <table>
+                <tbody>
+                    <td class="C1">First cell</td>
+                    <td class="C2">Second cell</td>
+                </tbody>
+        </table>
+    </body>
+</html>
