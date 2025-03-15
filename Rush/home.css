@@ -418,4 +418,18 @@ a{
     animation-play-state: paused;
 }
 
+/* Media Query for Tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    bg.{
+        width: 100vw;
+        height: 100vh;
+    }
+}
 
+/* Media Query for Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    bg.{
+        width: 100vw;
+        height: 100vh;
+    }
+}
