@@ -68,3 +68,10 @@
     top: 30%;
     left: 45%;
   }
+  .ads{
+    font-size: 4rem;
+    font-weight: 500;
+    position: absolute;
+    top: 23vh;
+    left: 42vw;
+  }

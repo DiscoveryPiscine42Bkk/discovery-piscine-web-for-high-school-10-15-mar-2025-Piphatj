@@ -8,42 +8,50 @@
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #f0f0f0;
+  background-color: #f7f7f7;
 }
+
 .container {
-  width: 300px;
-  background-color: white;
+  width: 80%;
+  max-width: 800px;
+  background-color: #fff;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  
 }
-.btn {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 10px;
-  width: 100%;
-  border-radius: 5px;
-}
-.btn:hover {
-  background-color: #45a049;
-}
+
 #ft_list {
-  margin-top: 20px;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .todo {
-  background-color: #e0e0e0;
+  background-color: #efefef;
   padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  margin-top: 0.5vh;
+  transition: background-color 0.2s;
 }
+
 .todo:hover {
-  background-color: #c0c0c0;
+  background-color: #d9d9d9;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  
+}
+
+button:hover {
+  background-color: red;
 }
  
 </style>
@@ -52,15 +60,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task Management</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="style.css"> <!-- Optional, if you want to add a separate CSS file -->
+  <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
   <div class="container">
-    <center><h1>TO DO LISH</h1></center>
+    <center><h1>TO DO LIST</h1></center>
     <button class="btn" id="newTaskBtn">New</button>
     <div id="ft_list"></div>
   </div>
 
-  <script src="todo.js"></script> <!-- Link to the external JS file -->
+  <script src="todo.js"></script> 
 </body>
 </html>

@@ -13,30 +13,34 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #f0f0f0;
+      background-color: #f4f4f4;
     }
+
     .calculator {
-      background-color: white;
+      background-color: #fff;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      text-align: center;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
     }
+
     input, select {
-      margin: 10px 0;
-      padding: 8px;
-      width: 100%;
+      padding: 10px;
       font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
+
     input[type="submit"] {
-      background-color: #4CAF50;
+      background-color: rgb(0, 225, 255);
       color: white;
-      border: none;
       cursor: pointer;
     }
+
     input[type="submit"]:hover {
-      background-color: #45a049;
+      background-color: #001eff;
     }
   </style>
 </head>
@@ -56,13 +60,13 @@
 
   <script>
     $(document).ready(function() {
-      // Function to perform calculation
+      
       $('#calculateBtn').click(function() {
         var leftOperand = $('#leftOperand').val();
         var rightOperand = $('#rightOperand').val();
         var operator = $('#operator').val();
 
-        // Check if both operands are valid positive integers
+        
         if (leftOperand === '' || rightOperand === '' || isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
           alert('Error :(');
           return;
@@ -71,7 +75,7 @@
         leftOperand = parseInt(leftOperand);
         rightOperand = parseInt(rightOperand);
 
-        // Perform calculation based on the operator
+       
         var result;
         switch (operator) {
           case '+':
@@ -103,16 +107,13 @@
             alert('Unknown operator');
             return;
         }
-
-        // Show result in an alert and log it to the console
         alert('Result: ' + result);
         console.log('Result: ' + result);
       });
 
-      // Set interval to show a pop-up every 30 seconds
       setInterval(function() {
         alert('Please, use me...');
-      }, 30000); // 30000 milliseconds = 30 seconds
+      }, 30000); 
     });
   </script>
 </body>
